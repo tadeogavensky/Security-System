@@ -1,0 +1,11 @@
+.about{
+    margin: 2rem;
+}
+
+.title{
+    font-size: larger;
+    font-family: "Palanquin",sans-serif;
+    font-weight: bold;
+    line-height: 1.625;
+    margin-bottom: 8px;
+}

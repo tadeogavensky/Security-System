@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  background-color: #1d3557;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.noStyleBtn {
+  border: none;
+  background-color: transparent;
+}
+
+.menuBtn {
+  display: block;
+}
+
+.overview {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.overview img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+
+.overview h3 {
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+
+.overview p {
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+}
+
+.links {
+  list-style: none;
+  display: none;
+  gap: 8px;
+  color: white;
+}
+
+.links li {
+  font-weight: bold;
+  transition: all;
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+
+.links li:hover {
+  color: lightblue;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translateX(100%);
+}
+
+.mobileMenu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.mobileMenu li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.mobileMenu ul div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 4px;
+  border: transparent 2px solid;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.mobileMenu ul div:hover {
+  border: #1d3557 2px solid;
+  background-color: #1d3557;
+  color: white;
+  transition: all 300ms ease-in-out;
+}
+
+
+
+@media screen and (min-width: 600px) {
+  .links {
+    display: flex;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+}
