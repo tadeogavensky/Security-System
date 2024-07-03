@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import styles from "@/components/components.module.css";
+import styles from "@/components/header.module.css";
 import user from "../../public/user.jpg";
 import Image from "next/image";
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { RiUser5Fill } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
-import { FaRunning } from "react-icons/fa";
+import { FaRunning,FaLightbulb } from "react-icons/fa";
 
 const Header = () => {
   const [menu, openMenu] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
           openMenu(!menu);
         }}
       >
-        <IoMenuSharp size={30} color="white" />
+        <IoMenuSharp size={30} color="black" />
       </button>
 
       <motion.div
@@ -77,9 +77,9 @@ const Header = () => {
           >
             <li>Intereses</li>
             {selected == "interests" ? (
-              <FaRunning size={30} color="white" />
+              <FaLightbulb size={30} color="white" />
             ) : (
-              <FaRunning size={30} color="black" />
+              <FaLightbulb size={30} color="black" />
             )}
           </div>
           <div

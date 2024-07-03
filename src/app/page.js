@@ -7,12 +7,15 @@ import Interests from "@/components/Interests";
 
 const Home = () => {
   return (
-    <main className={styles.main}>
+    <>
       <Header />
-      <About />
-      <Interests />
-      <ContactForm />
-    </main>
+
+      <main className={styles.main}>
+        <About />
+        <Interests />
+        <ContactForm />
+      </main>
+    </>
   );
 };
 
