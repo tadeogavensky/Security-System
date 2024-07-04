@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import styles from "@/components/header.module.css";
-import user from "../../public/user.jpg";
+import user2 from "../../public/user2.jpg";
 import Image from "next/image";
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { RiUser5Fill } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
-import { FaRunning,FaLightbulb } from "react-icons/fa";
+import { FaRunning, FaLightbulb } from "react-icons/fa";
 
 const Header = () => {
   const [menu, openMenu] = useState(false);
@@ -17,20 +17,35 @@ const Header = () => {
     open: { x: 0, opacity: 1 },
     closed: { x: "100%", opacity: 0 },
   };
+
+  const URLs = [
+    { link: "#about", text: "Sobre mí" },
+    { link: "#interests", text: "Intereses" },
+    { link: "#contact", text: "Contactarme" },
+  ];
+
   return (
     <header className={styles.header}>
       <div className={styles.overview}>
-        <Image src={user} />
+        <Image src={user2} />
         <div>
-          <h3>Sofía Gomez</h3>
+          <h3>Sarah Vieira</h3>
           <p>Frontend Developer</p>
         </div>
       </div>
 
       <ul className={styles.links}>
-        <li>Sobre mí</li>
-        <li>Intereses</li>
-        <li>Contactarme</li>
+        {URLs.map((link, index) => {
+          return (
+            <motion.li
+              initial={{ opacity: 0, translateY: -10 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <p>{link.text}</p>
+            </motion.li>
+          );
+        })}
       </ul>
 
       <button

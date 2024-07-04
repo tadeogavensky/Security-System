@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "@/components/interests.module.css";
 import { IoBookOutline } from "react-icons/io5";
@@ -5,6 +7,7 @@ import { MdOutlinePiano } from "react-icons/md";
 import { FaCode } from "react-icons/fa6";
 import { PiChefHat } from "react-icons/pi";
 import Interest from "./Interest";
+import { motion } from "framer-motion";
 
 const Interests = () => {
   const interests = [
@@ -34,12 +37,26 @@ const Interests = () => {
     },
   ];
 
+  const variants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <div className={styles.interests}>
       <h1>Mis Intereses</h1>
       <div className={styles.boxContainer}>
         {interests.map((interest, index) => (
-          <Interest key={index} interest={interest} />
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            variants={variants}
+          >
+            <Interest key={index} interest={interest} />
+          </motion.div>
         ))}
       </div>
     </div>

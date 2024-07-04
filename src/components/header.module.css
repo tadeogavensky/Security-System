@@ -62,7 +62,7 @@
 }
 
 .links li:hover {
-  color: blue;
+  color: #595cff;
 }
 
 .mobileMenu {
@@ -104,8 +104,8 @@
 }
 
 .mobileMenu ul div:hover {
-  border: blue 2px solid;
-  background-color: blue;
+  border: #595cff 2px solid;
+  background-color: #595cff;
   color: white;
   transition: all 300ms ease-in-out;
 }
