@@ -21,7 +21,7 @@ const Interests = () => {
       title: "Música",
       icon: <MdOutlinePiano size={30} />,
       description:
-        "Me apasiona escuchar y tocar música, especialmente el piano. La música es una forma de expresión artística que me inspira.",
+        "Me apasiona escuchar y tocar música, especialmente el piano.",
     },
     {
       title: "Programar",
