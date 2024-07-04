@@ -8,8 +8,6 @@ import Interests from "@/components/Interests";
 const Home = () => {
   return (
     <>
-      <Header />
-
       <main className={styles.main}>
         <About />
         <Interests />

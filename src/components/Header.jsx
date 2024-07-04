@@ -7,7 +7,8 @@ import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { RiUser5Fill } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
-import { FaRunning, FaLightbulb } from "react-icons/fa";
+import { FaRunning, FaLightbulb, FaHome } from "react-icons/fa";
+import Link from "next/link";
 
 const Header = () => {
   const [menu, openMenu] = useState(false);
@@ -19,15 +20,16 @@ const Header = () => {
   };
 
   const URLs = [
-    { link: "#about", text: "Sobre mí" },
-    { link: "#interests", text: "Intereses" },
-    { link: "#contact", text: "Contactarme" },
+    { link: "/", text: "Inicio" },
+    { link: "about", text: "Sobre mí" },
+    { link: "interests", text: "Intereses" },
+    { link: "contact", text: "Contactarme" },
   ];
 
   return (
     <header className={styles.header}>
       <div className={styles.overview}>
-        <Image src={user2} />
+        <Image alt="user" src={user2} />
         <div>
           <h3>Sarah Vieira</h3>
           <p>Frontend Developer</p>
@@ -41,8 +43,9 @@ const Header = () => {
               initial={{ opacity: 0, translateY: -10 }}
               animate={{ opacity: 1, translateY: 0 }}
               transition={{ duration: 0.3, delay: index * 0.4 }}
+              key={index}
             >
-              <p>{link.text}</p>
+              <Link href={link.link}>{link.text}</Link>
             </motion.li>
           );
         })}
@@ -73,42 +76,49 @@ const Header = () => {
           <IoCloseSharp size={30} color="black" />
         </button>
         <ul>
-          <div
+          <Link
+            href="/"
+            onClick={() => {
+              setSelected("home");
+              openMenu(false);
+            }}
+          >
+            <p>Inicio</p>
+            <FaHome size={30} color="black" />
+          </Link>
+          <Link
+            href="about"
             onClick={() => {
               setSelected("about");
+              openMenu(false);
             }}
           >
-            <li>Sobre mí</li>
-            {selected == "about" ? (
-              <RiUser5Fill size={30} color="white" />
-            ) : (
-              <RiUser5Fill size={30} color="black" />
-            )}
-          </div>
-          <div
+            <p>Sobre mí</p>
+
+            <RiUser5Fill size={30} color="black" />
+          </Link>
+          <Link
+            href="interests"
             onClick={() => {
               setSelected("interests");
+              openMenu(false);
             }}
           >
-            <li>Intereses</li>
-            {selected == "interests" ? (
-              <FaLightbulb size={30} color="white" />
-            ) : (
-              <FaLightbulb size={30} color="black" />
-            )}
-          </div>
-          <div
+            <p>Intereses</p>
+
+            <FaLightbulb size={30} color="black" />
+          </Link>
+          <Link
+            href="contact"
             onClick={() => {
               setSelected("contact");
+              openMenu(false);
             }}
           >
-            <li>Contactarme</li>
-            {selected == "contact" ? (
-              <MdAlternateEmail size={30} color="white" />
-            ) : (
-              <MdAlternateEmail size={30} color="black" />
-            )}
-          </div>
+            <p>Contactarme</p>
+
+            <MdAlternateEmail size={30} color="black" />
+          </Link>
         </ul>
       </motion.div>
     </header>

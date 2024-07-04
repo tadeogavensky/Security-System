@@ -5,6 +5,7 @@ import styles from "@/components/about.module.css";
 
 import { MdOutlineEmail } from "react-icons/md";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const About = () => {
   return (
     <motion.div
@@ -21,10 +22,10 @@ const About = () => {
           <p>Diseñadora UX/UI y Desarrolladora Frontend</p>
         </h1>
         <div className={styles.aboutContact}>
-          <button className={styles.btnContact}>
+          <Link href={"contact"} className={styles.btnContact}>
             <MdOutlineEmail size={24} />
             <p> Hablá conmigo!</p>
-          </button>
+          </Link>
           <a href="#">Mis proyectos</a>
         </div>
       </div>
